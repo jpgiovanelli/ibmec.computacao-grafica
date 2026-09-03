@@ -1,0 +1,49 @@
+{
+  "algoritmo": "Viola-Jones (Haar-like + AdaBoost + cascata de rejeicao)",
+  "classificadores": [
+    "haarcascade_frontalface_default.xml",
+    "haarcascade_eye.xml"
+  ],
+  "imagem": {
+    "fonte": "skimage.data.astronaut",
+    "largura": 512,
+    "altura": 512
+  },
+  "parametros": {
+    "scaleFactor": 1.08,
+    "minNeighbors": 5,
+    "minSize": [
+      40,
+      40
+    ]
+  },
+  "total_faces": 1,
+  "deteccoes": [
+    {
+      "id": 0,
+      "classe": "face_frontal",
+      "caixa": {
+        "x": 176,
+        "y": 65,
+        "largura": 97,
+        "altura": 97
+      },
+      "area_px": 9409,
+      "score_cascata": 6.35,
+      "olhos_detectados": [
+        {
+          "x": 187,
+          "y": 86,
+          "largura": 30,
+          "altura": 30
+        },
+        {
+          "x": 231,
+          "y": 89,
+          "largura": 29,
+          "altura": 29
+        }
+      ]
+    }
+  ]
+}

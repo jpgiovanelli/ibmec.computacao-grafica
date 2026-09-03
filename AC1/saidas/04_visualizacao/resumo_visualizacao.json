@@ -1,0 +1,28 @@
+{
+  "campo_escalar": {
+    "malha": "180x180",
+    "iteracoes": 4000,
+    "temperatura_media_final_C": 50.974
+  },
+  "campo_vetorial": {
+    "malha": "260x260",
+    "velocidade_maxima": 2.565
+  },
+  "volume_3d": {
+    "voxels": 729000,
+    "isosuperficies": {
+      "0.3": {
+        "vertices": 16494,
+        "triangulos": 32984
+      },
+      "0.62": {
+        "vertices": 4964,
+        "triangulos": 9916
+      },
+      "0.95": {
+        "vertices": 270,
+        "triangulos": 536
+      }
+    }
+  }
+}

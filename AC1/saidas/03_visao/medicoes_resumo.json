@@ -1,0 +1,252 @@
+{
+  "resumo": {
+    "objetos_contados": 24,
+    "gabarito_visual": 24,
+    "diametro_medio_px": 42.77,
+    "diametro_min_px": 19.6,
+    "diametro_max_px": 62.0,
+    "circularidade_media": 0.88
+  },
+  "objetos": [
+    {
+      "id": 1,
+      "centroide_x": 334.6,
+      "centroide_y": 43.5,
+      "area_px2": 2463,
+      "perimetro_px": 183.9,
+      "diametro_equivalente_px": 56.0,
+      "circularidade": 0.915,
+      "excentricidade": 0.313
+    },
+    {
+      "id": 2,
+      "centroide_x": 155.2,
+      "centroide_y": 50.8,
+      "area_px2": 1536,
+      "perimetro_px": 145.3,
+      "diametro_equivalente_px": 44.2,
+      "circularidade": 0.914,
+      "excentricidade": 0.233
+    },
+    {
+      "id": 3,
+      "centroide_x": 215.1,
+      "centroide_y": 51.0,
+      "area_px2": 1511,
+      "perimetro_px": 146.1,
+      "diametro_equivalente_px": 43.9,
+      "circularidade": 0.889,
+      "excentricidade": 0.365
+    },
+    {
+      "id": 4,
+      "centroide_x": 277.8,
+      "centroide_y": 60.0,
+      "area_px2": 303,
+      "perimetro_px": 82.9,
+      "diametro_equivalente_px": 19.6,
+      "circularidade": 0.554,
+      "excentricidade": 0.771
+    },
+    {
+      "id": 5,
+      "centroide_x": 100.3,
+      "centroide_y": 56.2,
+      "area_px2": 1013,
+      "perimetro_px": 116.7,
+      "diametro_equivalente_px": 35.9,
+      "circularidade": 0.935,
+      "excentricidade": 0.423
+    },
+    {
+      "id": 6,
+      "centroide_x": 42.2,
+      "centroide_y": 54.8,
+      "area_px2": 1131,
+      "perimetro_px": 148.4,
+      "diametro_equivalente_px": 37.9,
+      "circularidade": 0.646,
+      "excentricidade": 0.291
+    },
+    {
+      "id": 7,
+      "centroide_x": 270.7,
+      "centroide_y": 118.8,
+      "area_px2": 1813,
+      "perimetro_px": 162.7,
+      "diametro_equivalente_px": 48.0,
+      "circularidade": 0.861,
+      "excentricidade": 0.306
+    },
+    {
+      "id": 8,
+      "centroide_x": 44.8,
+      "centroide_y": 124.3,
+      "area_px2": 1212,
+      "perimetro_px": 131.6,
+      "diametro_equivalente_px": 39.3,
+      "circularidade": 0.879,
+      "excentricidade": 0.344
+    },
+    {
+      "id": 9,
+      "centroide_x": 205.3,
+      "centroide_y": 123.8,
+      "area_px2": 1136,
+      "perimetro_px": 125.1,
+      "diametro_equivalente_px": 38.0,
+      "circularidade": 0.913,
+      "excentricidade": 0.364
+    },
+    {
+      "id": 10,
+      "centroide_x": 336.1,
+      "centroide_y": 124.4,
+      "area_px2": 1110,
+      "perimetro_px": 120.8,
+      "diametro_equivalente_px": 37.6,
+      "circularidade": 0.956,
+      "excentricidade": 0.201
+    },
+    {
+      "id": 11,
+      "centroide_x": 102.3,
+      "centroide_y": 125.5,
+      "area_px2": 1045,
+      "perimetro_px": 119.7,
+      "diametro_equivalente_px": 36.5,
+      "circularidade": 0.916,
+      "excentricidade": 0.33
+    },
+    {
+      "id": 12,
+      "centroide_x": 153.5,
+      "centroide_y": 127.3,
+      "area_px2": 1013,
+      "perimetro_px": 118.0,
+      "diametro_equivalente_px": 35.9,
+      "circularidade": 0.914,
+      "excentricidade": 0.462
+    },
+    {
+      "id": 13,
+      "centroide_x": 346.9,
+      "centroide_y": 186.7,
+      "area_px2": 3021,
+      "perimetro_px": 204.2,
+      "diametro_equivalente_px": 62.0,
+      "circularidade": 0.911,
+      "excentricidade": 0.209
+    },
+    {
+      "id": 14,
+      "centroide_x": 212.4,
+      "centroide_y": 193.1,
+      "area_px2": 1639,
+      "perimetro_px": 153.0,
+      "diametro_equivalente_px": 45.7,
+      "circularidade": 0.88,
+      "excentricidade": 0.198
+    },
+    {
+      "id": 15,
+      "centroide_x": 274.0,
+      "centroide_y": 193.6,
+      "area_px2": 1426,
+      "perimetro_px": 147.5,
+      "diametro_equivalente_px": 42.6,
+      "circularidade": 0.823,
+      "excentricidade": 0.495
+    },
+    {
+      "id": 16,
+      "centroide_x": 101.7,
+      "centroide_y": 195.6,
+      "area_px2": 1379,
+      "perimetro_px": 135.4,
+      "diametro_equivalente_px": 41.9,
+      "circularidade": 0.945,
+      "excentricidade": 0.272
+    },
+    {
+      "id": 17,
+      "centroide_x": 43.7,
+      "centroide_y": 197.3,
+      "area_px2": 1055,
+      "perimetro_px": 121.2,
+      "diametro_equivalente_px": 36.7,
+      "circularidade": 0.903,
+      "excentricidade": 0.33
+    },
+    {
+      "id": 18,
+      "centroide_x": 154.0,
+      "centroide_y": 197.7,
+      "area_px2": 1076,
+      "perimetro_px": 120.3,
+      "diametro_equivalente_px": 37.0,
+      "circularidade": 0.934,
+      "excentricidade": 0.246
+    },
+    {
+      "id": 19,
+      "centroide_x": 45.9,
+      "centroide_y": 259.9,
+      "area_px2": 2347,
+      "perimetro_px": 180.3,
+      "diametro_equivalente_px": 54.7,
+      "circularidade": 0.908,
+      "excentricidade": 0.258
+    },
+    {
+      "id": 20,
+      "centroide_x": 172.3,
+      "centroide_y": 261.2,
+      "area_px2": 2232,
+      "perimetro_px": 176.4,
+      "diametro_equivalente_px": 53.3,
+      "circularidade": 0.902,
+      "excentricidade": 0.426
+    },
+    {
+      "id": 21,
+      "centroide_x": 300.5,
+      "centroide_y": 263.3,
+      "area_px2": 1916,
+      "perimetro_px": 164.4,
+      "diametro_equivalente_px": 49.4,
+      "circularidade": 0.891,
+      "excentricidade": 0.428
+    },
+    {
+      "id": 22,
+      "centroide_x": 243.9,
+      "centroide_y": 263.2,
+      "area_px2": 1688,
+      "perimetro_px": 153.4,
+      "diametro_equivalente_px": 46.4,
+      "circularidade": 0.901,
+      "excentricidade": 0.28
+    },
+    {
+      "id": 23,
+      "centroide_x": 113.7,
+      "centroide_y": 265.5,
+      "area_px2": 1350,
+      "perimetro_px": 134.7,
+      "diametro_equivalente_px": 41.5,
+      "circularidade": 0.935,
+      "excentricidade": 0.195
+    },
+    {
+      "id": 24,
+      "centroide_x": 358.0,
+      "centroide_y": 267.8,
+      "area_px2": 1410,
+      "perimetro_px": 141.1,
+      "diametro_equivalente_px": 42.4,
+      "circularidade": 0.891,
+      "excentricidade": 0.406
+    }
+  ]
+}

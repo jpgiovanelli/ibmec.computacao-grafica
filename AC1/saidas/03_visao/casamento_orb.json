@@ -1,0 +1,36 @@
+{
+  "detector_descritor": "ORB (FAST + BRIEF orientado, descritor binario 256 bits)",
+  "casamento": "forca bruta, distancia de Hamming + teste da razao de Lowe (0,75)",
+  "estimador_robusto": "RANSAC, limiar de reprojecao 4,0 px",
+  "pontos_chave_imagem_1": 1500,
+  "pontos_chave_imagem_2": 1500,
+  "casamentos_apos_lowe": 659,
+  "inliers_ransac": 647,
+  "taxa_inliers": 0.982,
+  "transformacao_aplicada_a_cena": {
+    "rotacao_graus": 32,
+    "escala": 0.7,
+    "translacao_px": [
+      40,
+      25
+    ],
+    "brilho": "alpha=0,75 beta=+12"
+  },
+  "homografia_estimada": [
+    [
+      0.59465,
+      0.36942,
+      49.56423
+    ],
+    [
+      -0.37001,
+      0.59367,
+      223.72842
+    ],
+    [
+      0.0,
+      -0.0,
+      1.0
+    ]
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "ruido_sal_e_pimenta": {
+    "psnr_ruidosa_dB": 17.38,
+    "psnr_filtro_media_dB": 23.21,
+    "psnr_filtro_mediana_dB": 26.27,
+    "ssim_filtro_media": 0.5691,
+    "ssim_filtro_mediana": 0.7727
+  },
+  "ruido_gaussiano": {
+    "psnr_ruidosa_dB": 21.42,
+    "psnr_filtro_gaussiano_dB": 25.2,
+    "ssim_filtro_gaussiano": 0.6923
+  },
+  "limiar_otsu": 107.0,
+  "imagem": {
+    "fonte": "skimage.data.coins",
+    "altura": 303,
+    "largura": 384,
+    "niveis_de_cinza": 256
+  }
+}
