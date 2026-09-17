@@ -1,0 +1,4 @@
+# Dependencias do trabalho AC02 - Transformacoes Geometricas 2D
+# Instalacao:  pip install -r requirements.txt
+numpy>=1.24
+matplotlib>=3.7
