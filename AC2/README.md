@@ -102,32 +102,32 @@ rotação são **produtos** por uma matriz 2×2 ($P' = S \cdot P$, $P' = R \cdot
 tratar todas da mesma forma, cada ponto $(x, y)$ é representado pelo vetor homogêneo
 $(x, y, 1)$ e cada transformação por uma matriz 3×3:
 
-$$
+```math
 P' = M \cdot P
 \qquad\Longleftrightarrow\qquad
 \begin{bmatrix} x' \\ y' \\ 1 \end{bmatrix} =
 M \cdot \begin{bmatrix} x \\ y \\ 1 \end{bmatrix}
-$$
+```
 
 As matrizes implementadas em [`transformacoes.py`](transformacoes.py) são exatamente as
 dos slides da disciplina:
 
 | Transformação | Função | Matriz $M$ | Efeito |
 |---|---|---|---|
-| Translação | `translacao(tx, ty)` | $\begin{bmatrix} 1 & 0 & t_x \\ 0 & 1 & t_y \\ 0 & 0 & 1 \end{bmatrix}$ | $x' = x + t_x,\ y' = y + t_y$ |
-| Escala | `escala(sx, sy)` | $\begin{bmatrix} s_x & 0 & 0 \\ 0 & s_y & 0 \\ 0 & 0 & 1 \end{bmatrix}$ | $x' = s_x x,\ y' = s_y y$ (uniforme se $s_x = s_y$) |
-| Rotação | `rotacao(θ)` | $\begin{bmatrix} \cos\theta & -\sin\theta & 0 \\ \sin\theta & \cos\theta & 0 \\ 0 & 0 & 1 \end{bmatrix}$ | gira $\theta$ em torno da origem; $\theta > 0$ é anti-horário |
-| Reflexão no eixo $x$ | `reflexao_eixo_x()` | $\begin{bmatrix} 1 & 0 & 0 \\ 0 & -1 & 0 \\ 0 & 0 & 1 \end{bmatrix}$ | $y' = -y$ |
-| Reflexão no eixo $y$ | `reflexao_eixo_y()` | $\begin{bmatrix} -1 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 1 \end{bmatrix}$ | $x' = -x$ |
-| Cisalhamento horizontal | `cisalhamento(kx)` | $\begin{bmatrix} 1 & k & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 1 \end{bmatrix}$ | $x' = x + k\,y,\ y' = y$ |
+| Translação | `translacao(tx, ty)` | $`\begin{bmatrix} 1 & 0 & t_x \\ 0 & 1 & t_y \\ 0 & 0 & 1 \end{bmatrix}`$ | $x' = x + t_x,\ y' = y + t_y$ |
+| Escala | `escala(sx, sy)` | $`\begin{bmatrix} s_x & 0 & 0 \\ 0 & s_y & 0 \\ 0 & 0 & 1 \end{bmatrix}`$ | $x' = s_x x,\ y' = s_y y$ (uniforme se $s_x = s_y$) |
+| Rotação | `rotacao(θ)` | $`\begin{bmatrix} \cos\theta & -\sin\theta & 0 \\ \sin\theta & \cos\theta & 0 \\ 0 & 0 & 1 \end{bmatrix}`$ | gira $\theta$ em torno da origem; $\theta > 0$ é anti-horário |
+| Reflexão no eixo $x$ | `reflexao_eixo_x()` | $`\begin{bmatrix} 1 & 0 & 0 \\ 0 & -1 & 0 \\ 0 & 0 & 1 \end{bmatrix}`$ | $y' = -y$ |
+| Reflexão no eixo $y$ | `reflexao_eixo_y()` | $`\begin{bmatrix} -1 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 1 \end{bmatrix}`$ | $x' = -x$ |
+| Cisalhamento horizontal | `cisalhamento(kx)` | $`\begin{bmatrix} 1 & k & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 1 \end{bmatrix}`$ | $x' = x + k \cdot y,\ y' = y$ |
 
 **Composição.** Aplicar $M_1$, depois $M_2$, depois $M_3$ a um ponto equivale a aplicar
 uma única matriz, obtida multiplicando **da direita para a esquerda** (a primeira
 transformação fica encostada no ponto):
 
-$$
+```math
 P' = M_3 \cdot (M_2 \cdot (M_1 \cdot P)) = (M_3 \cdot M_2 \cdot M_1) \cdot P = M \cdot P
-$$
+```
 
 A função `compor(M1, M2, M3)` recebe as matrizes **na ordem em que serão aplicadas** e
 devolve $M_3 \cdot M_2 \cdot M_1$. Como o produto de matrizes não é comutativo, trocar a
@@ -145,13 +145,13 @@ $\theta > 0$. Uma rotação *horária* de 45° é, portanto, $R(-45°)$.
 
 **Matriz e cálculo**
 
-$$
+```math
 P' = T(4, -2) \cdot P =
 \begin{bmatrix} 1 & 0 & 4 \\ 0 & 1 & -2 \\ 0 & 0 & 1 \end{bmatrix}
 \begin{bmatrix} 2 \\ 3 \\ 1 \end{bmatrix} =
 \begin{bmatrix} 2 + 4 \\ 3 - 2 \\ 1 \end{bmatrix} =
 \begin{bmatrix} 6 \\ 1 \\ 1 \end{bmatrix}
-$$
+```
 
 **Resposta:** $P' = (6, 1)$.
 
@@ -174,13 +174,13 @@ tamanho, orientação ou forma.
 
 **Matriz e cálculo**
 
-$$
+```math
 S(2, 2) = \begin{bmatrix} 2 & 0 & 0 \\ 0 & 2 & 0 \\ 0 & 0 & 1 \end{bmatrix}
 \qquad
 A' = \begin{bmatrix} 2 \cdot 1 \\ 2 \cdot 1 \end{bmatrix},\quad
 B' = \begin{bmatrix} 2 \cdot 3 \\ 2 \cdot 1 \end{bmatrix},\quad
 C' = \begin{bmatrix} 2 \cdot 2 \\ 2 \cdot 4 \end{bmatrix}
-$$
+```
 
 **Resposta:** $A' = (2, 2)$, $B' = (6, 2)$, $C' = (4, 8)$.
 
@@ -203,13 +203,13 @@ também se afasta dela: cada vértice desliza ao longo da reta que o liga à ori
 
 **Matriz e cálculo**
 
-$$
+```math
 S(2,\ 0.5) = \begin{bmatrix} 2 & 0 & 0 \\ 0 & 0.5 & 0 \\ 0 & 0 & 1 \end{bmatrix}
 \qquad
 A' = \begin{bmatrix} 2 \cdot 1 \\ 0.5 \cdot 1 \end{bmatrix},\quad
 B' = \begin{bmatrix} 2 \cdot 3 \\ 0.5 \cdot 1 \end{bmatrix},\quad
 C' = \begin{bmatrix} 2 \cdot 2 \\ 0.5 \cdot 4 \end{bmatrix}
-$$
+```
 
 **Resposta:** $A' = (2, 0.5)$, $B' = (6, 0.5)$, $C' = (4, 2)$.
 
@@ -229,13 +229,13 @@ slides). Um detalhe que o script confirma: a área fica igual a 3, porque o fato
 
 **Matriz e cálculo** — com $\cos 90° = 0$ e $\sin 90° = 1$:
 
-$$
+```math
 P' = R(90°) \cdot P =
 \begin{bmatrix} 0 & -1 & 0 \\ 1 & 0 & 0 \\ 0 & 0 & 1 \end{bmatrix}
 \begin{bmatrix} 1 \\ 0 \\ 1 \end{bmatrix} =
 \begin{bmatrix} 0 \cdot 1 - 1 \cdot 0 \\ 1 \cdot 1 + 0 \cdot 0 \\ 1 \end{bmatrix} =
 \begin{bmatrix} 0 \\ 1 \\ 1 \end{bmatrix}
-$$
+```
 
 **Resposta:** $P' = (0, 1)$.
 
@@ -258,14 +258,14 @@ $10^{-12}$ antes de imprimir.
 Sentido horário ⇒ $\theta = -45°$, com $\cos(-45°) = \tfrac{\sqrt{2}}{2}$ e
 $\sin(-45°) = -\tfrac{\sqrt{2}}{2}$:
 
-$$
+```math
 R(-45°) =
 \begin{bmatrix} \tfrac{\sqrt{2}}{2} & \tfrac{\sqrt{2}}{2} & 0 \\ -\tfrac{\sqrt{2}}{2} & \tfrac{\sqrt{2}}{2} & 0 \\ 0 & 0 & 1 \end{bmatrix}
 \approx
 \begin{bmatrix} 0.707 & 0.707 & 0 \\ -0.707 & 0.707 & 0 \\ 0 & 0 & 1 \end{bmatrix}
 \qquad\Rightarrow\qquad
 x' = \tfrac{\sqrt{2}}{2}(x + y),\quad y' = \tfrac{\sqrt{2}}{2}(y - x)
-$$
+```
 
 O enunciado não fixa o ponto de referência; como no Exercício 4, e como na matriz
 $R(\theta)$ da aula, a rotação é feita **em torno da origem**.
@@ -303,12 +303,12 @@ mostra essa variante.
 
 Refletir em relação ao eixo $y$ (a reta $x = 0$) troca o sinal de $x$ e mantém $y$:
 
-$$
+```math
 P' = F_y \cdot P =
 \begin{bmatrix} -1 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 1 \end{bmatrix}
 \begin{bmatrix} 2 \\ 5 \\ 1 \end{bmatrix} =
 \begin{bmatrix} -2 \\ 5 \\ 1 \end{bmatrix}
-$$
+```
 
 **Resposta:** $P' = (-2, 5)$.
 
@@ -328,11 +328,11 @@ fator $-1$ em um dos eixos.
 
 Refletir em relação ao eixo $x$ (a reta $y = 0$) troca o sinal de $y$ e mantém $x$:
 
-$$
+```math
 F_x = \begin{bmatrix} 1 & 0 & 0 \\ 0 & -1 & 0 \\ 0 & 0 & 1 \end{bmatrix}
 \qquad
 A' = (2,\ -3),\quad B' = (4,\ -3),\quad C' = (3,\ -5)
-$$
+```
 
 **Resposta:** $A' = (2, -3)$, $B' = (4, -3)$, $C' = (3, -5)$.
 
@@ -354,13 +354,13 @@ da matriz, que vale $-1$.
 No cisalhamento horizontal cada ponto é empurrado em $x$ de uma quantidade
 proporcional à sua altura $y$:
 
-$$
+```math
 P' = H(2) \cdot P =
 \begin{bmatrix} 1 & 2 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 1 \end{bmatrix}
 \begin{bmatrix} 2 \\ 3 \\ 1 \end{bmatrix} =
 \begin{bmatrix} 2 + 2 \cdot 3 \\ 3 \\ 1 \end{bmatrix} =
 \begin{bmatrix} 8 \\ 3 \\ 1 \end{bmatrix}
-$$
+```
 
 **Resposta:** $P' = (8, 3)$.
 
@@ -387,20 +387,20 @@ transformando o retângulo em um paralelogramo de mesma área — o determinante
 | Passo | Matriz | Resultado |
 |---|---|---|
 | 0. ponto original | — | $P = (3, 2)$ |
-| 1. $T(1, -1)$ | $\begin{bmatrix} 1 & 0 & 1 \\ 0 & 1 & -1 \\ 0 & 0 & 1 \end{bmatrix}$ | $P_1 = (3 + 1,\ 2 - 1) = (4, 1)$ |
-| 2. $R(90°)$ | $\begin{bmatrix} 0 & -1 & 0 \\ 1 & 0 & 0 \\ 0 & 0 & 1 \end{bmatrix}$ | $P_2 = (-1,\ 4)$ |
-| 3. $S(2)$ | $\begin{bmatrix} 2 & 0 & 0 \\ 0 & 2 & 0 \\ 0 & 0 & 1 \end{bmatrix}$ | $P' = (-2,\ 8)$ |
+| 1. $T(1, -1)$ | $`\begin{bmatrix} 1 & 0 & 1 \\ 0 & 1 & -1 \\ 0 & 0 & 1 \end{bmatrix}`$ | $P_1 = (3 + 1,\ 2 - 1) = (4, 1)$ |
+| 2. $R(90°)$ | $`\begin{bmatrix} 0 & -1 & 0 \\ 1 & 0 & 0 \\ 0 & 0 & 1 \end{bmatrix}`$ | $P_2 = (-1,\ 4)$ |
+| 3. $S(2)$ | $`\begin{bmatrix} 2 & 0 & 0 \\ 0 & 2 & 0 \\ 0 & 0 & 1 \end{bmatrix}`$ | $P' = (-2,\ 8)$ |
 
 **Matriz composta** — a primeira transformação aplicada fica mais à direita:
 
-$$
+```math
 M = S(2) \cdot R(90°) \cdot T(1, -1) =
 \begin{bmatrix} 0 & -2 & 2 \\ 2 & 0 & 2 \\ 0 & 0 & 1 \end{bmatrix}
 \qquad
 M \cdot \begin{bmatrix} 3 \\ 2 \\ 1 \end{bmatrix} =
 \begin{bmatrix} 0 - 4 + 2 \\ 6 + 0 + 2 \\ 1 \end{bmatrix} =
 \begin{bmatrix} -2 \\ 8 \\ 1 \end{bmatrix}
-$$
+```
 
 **Resposta:** $P' = (-2, 8)$.
 
@@ -433,13 +433,13 @@ trajetória completa $P \to P_1 \to P_2 \to P'$.
 
 **Matriz composta:**
 
-$$
+```math
 M = F_y \cdot S(1.5,\ 0.5) \cdot T(-2, 3) =
 \begin{bmatrix} -1 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 1 \end{bmatrix}
 \begin{bmatrix} 1.5 & 0 & 0 \\ 0 & 0.5 & 0 \\ 0 & 0 & 1 \end{bmatrix}
 \begin{bmatrix} 1 & 0 & -2 \\ 0 & 1 & 3 \\ 0 & 0 & 1 \end{bmatrix} =
 \begin{bmatrix} -1.5 & 0 & 3 \\ 0 & 0.5 & 1.5 \\ 0 & 0 & 1 \end{bmatrix}
-$$
+```
 
 Ou seja, $x' = -1.5x + 3$ e $y' = 0.5y + 1.5$. Conferindo com $A(1, 1)$:
 $x' = -1.5 + 3 = 1.5$, $y' = 0.5 + 1.5 = 2$ ✓.
@@ -462,8 +462,8 @@ translação):
 
 | Ordem | Matriz composta | $P'$ |
 |---|---|---|
-| $T \to R \to S$ (enunciado) | $M = S \cdot R \cdot T = \begin{bmatrix} 0 & -2 & 2 \\ 2 & 0 & 2 \\ 0 & 0 & 1 \end{bmatrix}$ | $(-2, 8)$ |
-| $S \to R \to T$ (invertida) | $M = T \cdot R \cdot S = \begin{bmatrix} 0 & -2 & 1 \\ 2 & 0 & -1 \\ 0 & 0 & 1 \end{bmatrix}$ | $(-3, 5)$ |
+| $T \to R \to S$ (enunciado) | $`M = S \cdot R \cdot T = \begin{bmatrix} 0 & -2 & 2 \\ 2 & 0 & 2 \\ 0 & 0 & 1 \end{bmatrix}`$ | $(-2, 8)$ |
+| $S \to R \to T$ (invertida) | $`M = T \cdot R \cdot S = \begin{bmatrix} 0 & -2 & 1 \\ 2 & 0 & -1 \\ 0 & 0 & 1 \end{bmatrix}`$ | $(-3, 5)$ |
 
 As mesmas três transformações produzem pontos diferentes: a parte linear (rotação +
 escala) é a mesma nas duas matrizes, mas a coluna de translação muda, porque na primeira
