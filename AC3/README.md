@@ -178,7 +178,6 @@ como o posicionamento manual do triângulo aqui.
 - Blender Foundation. *Blender Python API 4.5* — `bpy.types.Object` (`location`, `rotation_euler`, `scale`, `parent`, `keyframe_insert`). <https://docs.blender.org/api/4.5/>
 - Slides da disciplina: *Transformações Geométricas 2D e 3D* (CG_26.2_8001).
 - HUGHES, J. F. et al. *Computer Graphics: Principles and Practice*. 3. ed. Addison-Wesley, 2014 — caps. 10–11.
-- Servidor MCP usado para automatizar o Blender a partir do terminal: <https://github.com/ahujasid/mcp-for-blender>.
 
 ---
 
