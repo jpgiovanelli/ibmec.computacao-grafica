@@ -1,7 +1,7 @@
 # AP1 — Conceito e Modelagem da Peça "Ibmec em 15 segundos"
 
-**Disciplina:** Computação Gráfica — CG_26.2_8001
-**Atividade:** AP1 — cena-conceito no Blender 4.5 LTS (base da animação da AP2)
+**Disciplina:** Computação Gráfica — CG_26.2_8001<br>
+**Atividade:** AP1 — cena-conceito no Blender 4.5 LTS (base da animação da AP2)<br>
 **Aluno:** João Pedro Giovanelli Berla
 
 > **Objetivo da atividade:** conceber e modelar uma cena 3D organizada, com a palavra
@@ -20,6 +20,7 @@
 | [`AP1_JoaoGiovanelli.py`](AP1_JoaoGiovanelli.py) | Script Python que constrói a cena inteira (reprodutível, aba **Scripting**) |
 | [`storyboard/montar_storyboard.py`](storyboard/montar_storyboard.py) | Script (Matplotlib) que monta a prancha do storyboard a partir das capturas |
 | Este `README.md` | Relatório: conceito, objetos autorais, técnicas, storyboard e plano para a AP2 |
+| [`AP1_JoaoGiovanelli_relatorio.pdf`](AP1_JoaoGiovanelli_relatorio.pdf) | O mesmo relatório em PDF (A4, 7 páginas) |
 
 ![Enquadramento principal — CAM_Principal, Material Preview](imagens/01_enquadramento_principal.png)
 
@@ -112,6 +113,7 @@ palavra **Ibmec** no centro, como o agente que realiza essa passagem.
 
 **Recursos de modelagem usados** (o enunciado pede pelo menos dois além da escala de
 primitivas):
+
 - **Edição de malha:** extrusão (lombada, coroa e antena da torre), inset (janelas e topo da
   torre), loop cuts (lombada do livro e andares da torre) e bevel (bordas).
 - **Curvas:** curva Bézier da ponte, curvas do guarda-corpo e curva de texto com
@@ -123,16 +125,17 @@ primitivas):
   com capa e páginas, a ponte com viga, tabuleiro, guarda-corpo e postes.
 
 **Transformações geométricas intencionais:**
+
 - **Translação:** cada elemento foi posicionado em relação aos outros. A ponte começa na
   borda do livro. A posição da torre é **calculada** girando o vetor (comprimento da ponte,
   0, 0) em 35° no eixo Z e somando o ponto inicial da ponte, uma composição de rotação e
   translação.
 - **Rotação:**
-  - palavra: 90° em X, para ficar em pé;
-  - palavra e blocos: −4° em Z, para acompanhar a câmera;
-  - ponte: 35° em Z;
-  - torre: 15° em Z, para que as janelas não fiquem alinhadas à câmera;
-  - câmera: orientada por restrição *Track To* para o Empty `Alvo_Camera`.
+    - palavra: 90° em X, para ficar em pé;
+    - palavra e blocos: −4° em Z, para acompanhar a câmera;
+    - ponte: 35° em Z;
+    - torre: 15° em Z, para que as janelas não fiquem alinhadas à câmera;
+    - câmera: orientada por restrição *Track To* para o Empty `Alvo_Camera`.
 - **Escala:** a torre tem escala não uniforme (1,1 em Z). A capa do livro, os blocos e as
   tábuas partem de cubos escalados. A coroa e a antena da torre foram escaladas **em torno
   de um pivô** (o topo da torre), não da origem.
@@ -184,21 +187,21 @@ AP1_Ibmec_Conceito
 ## 7. Plano para a AP2
 
 - **Animação por keyframes e interpolação:**
-  - blocos: surgimento (escala e translação em Z);
-  - letras: escala Z de 0 a 1 em sequência, com interpolação *Back/Elastic* para um
-    pequeno "salto";
-  - tabuleiro da ponte: o `count` do Array ou a *Bevel Factor* da curva animada, para a
-    ponte crescer ao longo do arco;
-  - torre: escala Z e ângulo do *Simple Deform* animados.
+    - blocos: surgimento (escala e translação em Z);
+    - letras: escala Z de 0 a 1 em sequência, com interpolação *Back/Elastic* para um
+      pequeno "salto";
+    - tabuleiro da ponte: o `count` do Array ou a *Bevel Factor* da curva animada, para a
+      ponte crescer ao longo do arco;
+    - torre: escala Z e ângulo do *Simple Deform* animados.
 - **Câmera:** keyframes na `CAM_Principal` e no `Alvo_Camera`, passando pelos três
   enquadramentos do storyboard. Easing *Bezier* para movimentos suaves.
 - **Iluminação:** substituir a luz única por um esquema de três pontos (*key*, *fill* e
   *rim*) e um HDRI suave no World.
 - **Materiais e texturas:**
-  - azul institucional nas letras, com leve brilho;
-  - capa do livro em tecido ou couro e textura de papel nas páginas;
-  - madeira no tabuleiro e metal na viga e no guarda-corpo;
-  - vidro com emissão nas janelas da torre.
+    - azul institucional nas letras, com leve brilho;
+    - capa do livro em tecido ou couro e textura de papel nas páginas;
+    - madeira no tabuleiro e metal na viga e no guarda-corpo;
+    - vidro com emissão nas janelas da torre.
 - **Acabamento e render:** EEVEE (mais rápido) ou Cycles para o quadro final, profundidade
   de campo leve na câmera, exportação do vídeo em 1920 × 1080, 24 fps, H.264 (MP4).
 - **Ajustes de modelagem previstos:** detalhes extras na torre (faixas de LED entre
