@@ -4,7 +4,9 @@ AP2 - renderiza a animacao em quadros PNG (retomavel) para depois codificar o MP
 USO
     blender -b AP2/AP2_JoaoGiovanelli.blend --python AP2/AP2_render.py -- <pasta> [inicio fim [porcentagem]]
     blender -b AP2/AP2_JoaoGiovanelli.blend --python AP2/AP2_render.py -- <pasta> lista 1,60,120 [porcentagem]
-    depois: ffmpeg -framerate 24 -i <pasta>/%04d.png -c:v libx264 -pix_fmt yuv420p -crf 18 AP2/AP2_JoaoGiovanelli.mp4
+    depois: ffmpeg -framerate 24 -i <pasta>/%04d.png -c:v libx264 -profile:v high -level:v 4.1
+                   -crf 18 -pix_fmt yuv420p -colorspace bt709 -color_primaries bt709
+                   -color_trc bt709 -movflags +faststart AP2/AP2_JoaoGiovanelli.mp4
 
 Os quadros ja existentes sao pulados (use_overwrite = False), entao o render pode
 ser interrompido e retomado. O .blend nao e salvo.

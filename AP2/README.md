@@ -156,7 +156,7 @@ e nenhum muda a aparência final:
 | *Motion blur* | Ligado, *shutter* 0,5 (meio quadro): suaviza a queda dos blocos e o recuo da câmera |
 | Formato | 1920 × 1080, **24 fps**, quadros **1–360** (15 s), AgX |
 | Saída no `.blend` | **FFmpeg → MPEG-4 → H.264**, qualidade *High*, `//AP2_JoaoGiovanelli.mp4`. *Render › Render Animation* (Ctrl+F12) gera o MP4 direto |
-| Como o vídeo entregue foi feito | Os 360 quadros foram renderizados em **PNG** ([`AP2_render.py`](AP2_render.py)), o que permite retomar se o render parar. Levou 256 s numa RTX 4060 Ti, ≈ 0,7 s por quadro. Os PNG foram codificados em **H.264** (libx264, CRF 18, yuv420p, 24 fps) com o ffmpeg |
+| Como o vídeo entregue foi feito | Os 360 quadros foram renderizados em **PNG** ([`AP2_render.py`](AP2_render.py)), o que permite retomar se o render parar. Levou 256 s numa RTX 4060 Ti, ≈ 0,7 s por quadro. Os PNG foram codificados em **H.264** com o ffmpeg (libx264, perfil High, nível 4.1, CRF 18, yuv420p, cor BT.709, 24 fps). O nível 4.1 e as tags de cor garantem que o vídeo toque nos players do Windows: na primeira codificação o x264 escolheu o nível 5.0 e o Media Player não reproduziu |
 | Testes antes do final | 15 quadros-chave em 50% de resolução para checar enquadramento e timing. Esse teste mostrou o corte do "I" e o brilho estourado das janelas, ambos corrigidos |
 | Verificação do MP4 | `ffprobe`: H.264 High, 1920 × 1080, 24 fps, **360 quadros, 15,000 s**. O vídeo foi conferido do início ao fim, com uma folha de contato de 1 quadro a cada 8 extraída do próprio MP4 |
 
@@ -186,6 +186,7 @@ e nenhum muda a aparência final:
 | Janelas acesas estourando para branco | Emissão de 1,6 para 0,7 e cor azulada |
 | Imagem acinzentada no vídeo | *Look* AgX Medium High Contrast e sol a 4,5 W/m² |
 | Risco de perder o render no meio | Sequência PNG retomável, depois codificada em H.264 |
+| Primeiro MP4 não tocava no Media Player do Windows (o x264 escolheu o nível 5.0) | Nova codificação com perfil High, nível 4.1 e tags de cor BT.709, a partir dos mesmos quadros |
 
 ## 9. Organização da cena (Outliner)
 
@@ -234,7 +235,7 @@ AP1_Ibmec_Conceito
    MP4 direto.<br>
    Ou pelo terminal:
    `blender -b AP2/AP2_JoaoGiovanelli.blend --python AP2/AP2_render.py -- quadros/` e depois
-   `ffmpeg -framerate 24 -i quadros/%04d.png -c:v libx264 -crf 18 -pix_fmt yuv420p AP2/AP2_JoaoGiovanelli.mp4`.
+   `ffmpeg -framerate 24 -i quadros/%04d.png -c:v libx264 -profile:v high -level:v 4.1 -crf 18 -pix_fmt yuv420p -colorspace bt709 -color_primaries bt709 -color_trc bt709 -movflags +faststart AP2/AP2_JoaoGiovanelli.mp4`.
 3. Capturas: `blender AP2/AP2_JoaoGiovanelli.blend --python AP2/AP2_capturas_interface.py`.
 4. Storyboard: `python AP2/storyboard/montar_storyboard.py`.
 
